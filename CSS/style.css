@@ -5,6 +5,26 @@
     --border-radius-block: 14px;
 }
 
+@font-face {
+    font-family: 'Facon';
+    src: url(../FONTS/Facon.ttf);
+}
+
+@font-face {
+    font-family: 'Poppin';
+    src: url(../FONTS/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../FONTS/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Ubuntu' ;
+    src: url(../FONTS/Ubuntu-Regular.ttf);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -160,7 +180,7 @@ header{
 
 /* Main */
 .content1{
-    margin-top: 70px;
+    margin-top: 60px;
     margin-left: 345px;
     padding: 2rem 1.5rem;
     background-color: var(--bg-color-content);
@@ -268,16 +288,22 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem 0 1.5rem;
+    font-family: 'Poppin';
+    font-weight: bold;
 }
 .top-card img{
     width: 70px;
 }
 
 .middle-card{
+    font-family: 'Roboto';
     padding: 1.5rem;
+    font-size: 50px;
 }
 
 .bottom-card{
+    font-family: 'Poppin';
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -285,7 +311,7 @@ header{
 }
 
 .recent-acti-block{
-    padding: 1rem 1.5rem 0 1.5rem;
+    padding: 1rem 1.5rem 1rem 1.5rem;
 }
 
 .profile-acti{
@@ -322,6 +348,12 @@ header{
     /* padding: 1rem; */
 
 }
+
+
+
+
+/* Content Product */
+
 
 
 

@@ -7,7 +7,8 @@ function showFullSideBar(){
     const barList = document.querySelectorAll("li");
     const listName = document.querySelectorAll("span.listName");
     const header = document.querySelector("header");
-    const content1 = document.querySelector(".content1");
+    // const content1 = document.querySelector(".content1");
+    const content1 = document.querySelectorAll(".content1");
     const adv = document.querySelector(".adv");
 
     if(checkBar == 1){
@@ -25,8 +26,11 @@ function showFullSideBar(){
 
         header.style.left = "100px";
 
-        content1.style.margin = "70px 0 0 100px";
-
+        // content1.style.margin = "70px 0 0 100px";
+        content1.forEach(content => {
+            content.style.margin = "70px 0 0 100px";
+            
+        });
         adv.classList.remove('hide');
 
         checkBar = 0;
@@ -45,7 +49,12 @@ function showFullSideBar(){
 
         header.style.left = "345px";
 
-        content1.style.margin = "70px 0 0 345px";
+        // content1.style.margin = "70px 0 0 345px";
+
+        content1.forEach(content => {
+            content.style.margin = "70px 0 0 345px";
+            
+        });
 
         adv.classList.add('hide');
 
