@@ -8,6 +8,7 @@ function showFullSideBar(){
     const listName = document.querySelectorAll("span.listName");
     const header = document.querySelector("header");
     const content1 = document.querySelector(".content1");
+    const adv = document.querySelector(".adv");
 
     if(checkBar == 1){
         sideBar.style.width = "100px";
@@ -26,6 +27,8 @@ function showFullSideBar(){
 
         content1.style.margin = "70px 0 0 100px";
 
+        adv.classList.remove('hide');
+
         checkBar = 0;
     } else{
         sideBar.style.width = "345px";
@@ -43,6 +46,8 @@ function showFullSideBar(){
         header.style.left = "345px";
 
         content1.style.margin = "70px 0 0 345px";
+
+        adv.classList.add('hide');
 
 
         checkBar = 1;
@@ -90,3 +95,6 @@ navItems.forEach(item => {
     document.getElementById(targetId).classList.add('active');
   });
 });
+
+
+

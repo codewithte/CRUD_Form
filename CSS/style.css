@@ -22,6 +22,10 @@
     opacity: 1;
 }
 
+.hide{
+    display: none;
+}
+
 body{
     min-height: 90vh;
 }
@@ -89,6 +93,7 @@ body{
 
 /* Main Content */  
 .main-content{
+    z-index: 999;
     margin-left: 345px;
 }
 header{
@@ -100,7 +105,13 @@ header{
     justify-content: space-between;
     padding: 1rem;
     height: 70px;
+    background-color: white;
+    z-index: 999;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.04);
+}
+
+.header-title label{
+    cursor: pointer;
 }
 
 
@@ -116,6 +127,7 @@ header{
 .search-wrapper i{
     padding: 0rem 1rem;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 .search-wrapper input{
     height: 100%;
@@ -135,6 +147,7 @@ header{
 .user-wrapper img{
     border-radius: 50%;
     padding: 10px;
+    cursor: pointer;
     /* margin-right: 1rem; */
 }
 .user-wrapper h4{
@@ -159,14 +172,23 @@ header{
 
 .cate1{
     display: flex;
-    width: 17rem;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    justify-content: space-between;
+    /* width: 272px; */
+    width: 100%;
+    /* gap: 70px; */
+    gap: 90px;
+    padding: 16px 24px;
+
+    /* justify-content: space-between; */
     align-items: center;
-    background-color: rgb(111, 111, 228);
+    /* background-color: rgb(111, 111, 228); */
+    background: linear-gradient(#0992C2,#AA2EE6);
     border-radius: var(--border-radius-block);
 }
+
+.adv{
+    z-index: 10;
+}
+
 
 .info-bottom{
     margin-top: 1.5rem;
@@ -236,7 +258,9 @@ header{
 .logo-card{
     margin: 0 1.5rem;
     border-radius: 20px;
-    background: linear-gradient(blue,rgb(102, 102, 222));
+    /* background: linear-gradient(blue,rgb(102, 102, 222)); */
+    background: linear-gradient(#0992C2,#AA2EE6);
+
 }
 
 .top-card{
