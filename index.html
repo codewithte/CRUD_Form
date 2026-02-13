@@ -26,37 +26,37 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active">
+                    <a class="link_style active" id="Dashboard">
                         <span><i class="las la-tachometer-alt"></i></span>
                         <span class="listName">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="View/product.html">
+                    <a class="link_style" id="Product">
                         <span><i class="las la-box"></i></span>
                         <span class="listName">Product</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a  class="link_style" id="Categories">
                         <span><i class="las la-layer-group"></i></span>
                         <span class="listName">Categories</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a  class="link_style" id="Orders">
                         <span><i class="las la-shopping-cart"></i></span>
                         <span class="listName">Orders</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a  class="link_style" id="Users">
                         <span><i class="las la-user-circle"></i></span>
                         <span class="listName">Users</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a  class="link_style" id="Setting">
                         <span><i class="las la-cog"></i></span>
                         <span class="listName">Setting</span>
                     </a>
@@ -92,6 +92,171 @@
             </div>
         </header>
     </div>
+
+    <div class="content1 show" id="DashboardContent">
+        <div class="category-content d-flex">
+            <div class="cate1">
+                <div class="cate1-info">
+                    <span class="fs-1">800 <br></span>
+                    <span>Products</span>
+                </div>
+                <div><i class="las la-box fs-1"></i></div>
+            </div>
+            <div class="cate1">
+                <div class="cate1-info">
+                    <span class="fs-1">800 <br></span>
+                    <span>Transactions</span>
+                </div>
+                <div><i class="las la-file-invoice fs-1"></i></div>
+            </div>
+            <div class="cate1">
+                <div class="cate1-info">
+                    <span class="fs-1">800 <br></span>
+                    <span>Customers</span>
+                </div>
+                <div><i class="fa-solid fa-users fs-1"></i></div>
+            </div>
+            <div class="cate1">
+                <div class="cate1-info">
+                    <span class="fs-1">800 <br></span>
+                    <span>Orders</span>
+                </div>
+                <div><i class="las la-shopping-cart fs-1"></i></div>
+            </div>
+        </div>
+
+        <div class="info-bottom d-flex">
+            <div class="mid-block">
+                <div class="BalAndExp d-flex">
+                    <div class="balanceBlock">
+                        <span><b>Total Balance</b></span>
+                        <h1><sup>$</sup>12,900</h1>
+                        <div class="bal-btn"><i class="las la-arrow-up"></i>10.3%</div>
+                    </div>
+                    <div class="expenseBlock">
+                        <p class="fs-6">Expense</p>
+                        <img src="Images/Chart.png" class="chart-img">
+                    </div>
+                </div>
+
+                <table class="table-primary table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">User</th>
+                            <th scope="col">Payment</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>12-12-24</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>13-01-24</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>13-04-23</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>29-04-22</td>
+                        </tr>
+                    </tbody>
+                    </table>
+            </div>
+    
+            <div class="right-block">
+                <div class="header-card">
+                    <h3>Your cards</h3>
+                    <i class="fa-regular fa-square-plus"></i>
+                </div>
+
+                <div class="logo-card">
+                    <div class="top-card">
+                        <img src="Images/Logo/Logo-MasterCard.png">
+                        <span class="text-white">Debit</span>
+
+                    </div>
+
+                    <div class="middle-card">
+                        <span class="fs-1 text-white"><sup>$</sup>6,520</span>
+                    </div>
+
+                    <div class="bottom-card">
+                        <span class="text-white">. . . . &nbsp;&nbsp; 3917</span>
+                        <span class="text-white">04/26</span>
+                    </div>
+                </div>
+
+                <div class="recent-acti-block">
+                    <span class="fs-7"><b>Recent Actitvity</b></span>
+                    <div class="profile-acti">
+                        <div class="profile-block">
+                            <div class="left">
+                                <div class="logo-profile">
+                                    <img src="Images/Logo-Activity/ReadNovelFull.png">
+                                </div>
+                                <div class="act-info">
+                                    <span>ReadNovelFull <br></span>
+                                    <span>28 Oct 2020</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <span>$12.45</span>
+                            </div>
+                        </div>
+                        <div class="profile-block">
+                            <div class="left">
+                                <div class="logo-profile">
+                                    <img src="Images/Logo-Activity/tencent.png">
+                                </div>
+                                <div class="act-info">
+                                    <span>Tencent<br></span>
+                                    <span>28 Oct 2020</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <span>$12.45</span>
+                            </div>
+                        </div>
+                        <div class="profile-block">
+                            <div class="left">
+                                <div class="logo-profile">
+                                    <img src="Images/Logo-Activity/yt.png">
+                                </div>
+                                <div class="act-info">
+                                    <span>YouTube<br></span>
+                                    <span>28 Oct 2020</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <span>$12.45</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content1" id="ProductContent">
+        <h1>Hello World</h1>
+    </div>
+
+
 </body>
 
 <!-- Link Javascript -->
