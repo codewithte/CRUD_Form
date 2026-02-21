@@ -1,5 +1,6 @@
 const barIcon = document.getElementById("barIcon");
 let checkBar = 1;
+const addProduct = document.getElementById("addProduct");
 
 function showFullSideBar(){
     let sideBar = document.getElementById("sideBar");
@@ -7,7 +8,6 @@ function showFullSideBar(){
     const barList = document.querySelectorAll("li");
     const listName = document.querySelectorAll("span.listName");
     const header = document.querySelector("header");
-    // const content1 = document.querySelector(".content1");
     const content1 = document.querySelectorAll(".content1");
     const adv = document.querySelector(".adv");
 
@@ -49,8 +49,6 @@ function showFullSideBar(){
 
         header.style.left = "345px";
 
-        // content1.style.margin = "70px 0 0 345px";
-
         content1.forEach(content => {
             content.style.margin = "70px 0 0 345px";
             
@@ -63,7 +61,6 @@ function showFullSideBar(){
     }
 }
 
-barIcon.addEventListener("click",showFullSideBar);
 
 const link_style = document.querySelectorAll(".link_style");
 const sections = document.querySelectorAll('.content1');
@@ -80,30 +77,56 @@ link_style.forEach(linkStyle =>{
         const targetId = linkStyle.id + 'Content'; // e.g. "Dashboard" → "DashboardContent"
         document.getElementById(targetId).classList.add('show');
 
-        // alert    ("hi");
     })
 
 });
 
+// Function Add product and alert message
+const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+const appendAlert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+
+  alertPlaceholder.append(wrapper);
+
+  setTimeout(() => {
+    wrapper.remove();
+  }, 2000);
+}
+
+const alertTrigger = document.getElementById('liveAlertBtn')
+if (alertTrigger) {
+  alertTrigger.addEventListener('click', () => {
+    appendAlert('Product Added', 'success')
+  })
+}
+
+// Event Click
+barIcon.addEventListener("click",showFullSideBar);
 
 
-
-const navItems = document.querySelectorAll('.nav-item');
-
-navItems.forEach(item => {
-  item.addEventListener('click', () => {
-    // remove active from all nav items
-    navItems.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-
-    // hide all sections
-    sections.forEach(section => section.classList.remove('active'));
-
-    // show the matching section
-    const targetId = item.id + 'Content'; // e.g. "product" → "productContent"
-    document.getElementById(targetId).classList.add('active');
-  });
+//open Add Product Content
+const openCloseProduct = document.getElementById("addContent");
+addProduct.addEventListener("click", () => {
+    openCloseProduct.classList.remove('hide');
 });
+//Close Add Product Content
+const closeIconProduct = document.getElementById("closeIconProduct");
+closeIconProduct.addEventListener("click", () => {
+    openCloseProduct.classList.add('hide');
+});
+
+
+
+
+
+
+
 
 
 
