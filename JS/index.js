@@ -102,7 +102,8 @@ const appendAlert = (message, type) => {
 const alertTrigger = document.getElementById('liveAlertBtn')
 if (alertTrigger) {
   alertTrigger.addEventListener('click', () => {
-    appendAlert('Product Added', 'success')
+    appendAlert('Product Added', 'success');
+    addProducts();
   })
 }
 

@@ -294,16 +294,16 @@
             </div>
 
             <div class="group-input">
-                <input type="text" class="form-control" placeholder="Product Name" aria-label="Username" aria-describedby="addon-wrapping">
-                <input type="text" class="form-control" placeholder="Price" aria-label="Username" aria-describedby="addon-wrapping">
-                <input type="text" class="form-control" placeholder="Qty" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" id="proName" class="form-control" placeholder="Product Name" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" id="proPrice" class="form-control" placeholder="Price" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" id="proQty" class="form-control" placeholder="Qty" aria-label="Username" aria-describedby="addon-wrapping">
                 <select class="form-select" id="inputGroupSelect01">
                     <option selected>Select Categories</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option value="Soft Drink">Soft Drink</option>
+                    <option value="Energy Drink">Energy Drink</option>
+                    <option value="Bee">Beer</option>
                 </select>
-                <textarea class="form-control" aria-label="With textarea" placeholder="Description"></textarea>
+                <textarea class="form-control" id="textArea" aria-label="With textarea" placeholder="Description"></textarea>
                 <div id="liveAlertPlaceholder"></div>
                 <button type="button" class="btn btn-primary" id="liveAlertBtn">Add Product</button>
             </div>
@@ -316,7 +316,7 @@
         <hr>
 
         <div class="content-product">
-            <table class="table table-borderless">
+            <table class="table table-borderless" id="productTable">
                 <thead>
                     <tr>
                     <th scope="col">#</th>
@@ -329,7 +329,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+
+                    <!-- <tr>
                         <th scope="row">1</th>
                         <td>Coca-Cola</td>
                         <td>1$</td>
@@ -364,7 +365,7 @@
                             <button>Edit</button>
                             <button>Delete</button>
                         </td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -394,6 +395,9 @@
 
 <!-- JS CRUD -->
 <script src="JS/crud.js"></script>
+
+<!-- App JS -->
+ <script src="JS/app.js"></script>
 <!-- Link boostrap javascript -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script></script>
