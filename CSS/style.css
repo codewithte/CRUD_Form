@@ -134,7 +134,7 @@ header{
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.04);
 }
 
-.header-title label{
+.header-title span{
     cursor: pointer;
 }
 
@@ -186,8 +186,13 @@ header{
 .content1{
     margin-top: 60px;
     margin-left: 345px;
-    padding: 2rem 1.5rem;
+    /* padding: 2rem 1.5rem; */
+    padding: 0rem 1.5rem;
     background-color: var(--bg-color-content);
+}
+#DashboardContent{
+    padding: 2rem 1.5rem;
+
 }
 .category-content{
     gap: 1.5rem;
@@ -209,6 +214,10 @@ header{
     border-radius: var(--border-radius-block);
 }
 
+.cate1-info{
+    display: flex;
+    flex-direction: column;
+}
 .adv{
     z-index: 10;
 }
@@ -461,7 +470,33 @@ header{
     cursor: pointer;
 }
 
-td button{}
+.btnEdit, .btnDelete{
+    width: 80px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+}
+.btnEdit{
+    background: var(--main-color);
+}
+.btnDelete{
+    background: red;
+}
+
+#toPlaceLabel{
+    color: white;
+    font-family: "Poppin";
+    text-align: left;
+}
+
+.overview{
+    font-family: 'Poppin';
+    font-size: 24px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
 
 
 
