@@ -3,511 +3,604 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project</title>
-    <!-- Link CSS -->
-     <link rel="stylesheet" href="CSS/style.css">
-
-     <!-- Link Boostrap -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="description" content="Admin Dashboard - Manage Products, Categories, Orders and Users">
+    <meta name="theme-color" content="#09637E">
+    <title>Te Chyuy - Admin Dashboard</title>
     
-    <!-- Boostrap Icon -->
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-      <!-- Link to Fontawesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    <!-- Link to LineAwesome -->
-    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <!-- Line Awesome -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
 </head>
 <body class="body">
-    <div class="sidebar" id="sideBar">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sideBar" role="navigation" aria-label="Main navigation">
         <div class="sidebar-logo">
-            <h2><img src="Images/Logo/Logo_White.png" class="companyLogo "><span id="companyName">Te Chyuy</span></h2>
+            <h1><img src="Images/Logo/Logo_White.png" class="companyLogo" alt="Te Chyuy Logo"><span id="companyName">Te Chyuy</span></h1>
         </div>
 
-        <div class="sidebar-menu">
-            <ul>
-                <li>
-                    <a class="link_style active" id="Dashboard">
-                        <span><i class="las la-tachometer-alt"></i></span>
-                        <span class="listName">Dashboard</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="link_style" id="Product">
-                        <span><i class="las la-box"></i></span>
-                        <span class="listName">Product</span>
-                    </a>
-                </li>
-                <li>
-                    <a  class="link_style" id="Categories">
-                        <span><i class="las la-layer-group"></i></span>
-                        <span class="listName">Categories</span>
-                    </a>
-                </li>
-                <li>
-                    <a  class="link_style" id="Orders">
-                        <span><i class="las la-shopping-cart"></i></span>
-                        <span class="listName">Orders</span>
-                    </a>
-                </li>
-                <li>
-                    <a  class="link_style" id="Users">
-                        <span><i class="las la-user-circle"></i></span>
-                        <span class="listName">Users</span>
-                    </a>
-                </li>
-                <li>
-                    <a  class="link_style" id="Setting">
-                        <span><i class="las la-cog"></i></span>
-                        <span class="listName">Setting</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <header>
-            <div class="header-title">
-                <h2>
-                    <span id="Bar" >
-                       <i class="fa-solid fa-bars" id="barIcon"></i>
-                    </span>
-                    Dashboard
-                </h2>
+        <ul class="sidebar-menu">
+            <li>
+                <a class="link_style active" id="Dashboard" role="button" tabindex="0">
+                    <span aria-hidden="true"><i class="las la-tachometer-alt"></i></span>
+                    <span class="listName">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a class="link_style" id="Product" role="button" tabindex="0">
+                    <span aria-hidden="true"><i class="las la-box"></i></span>
+                    <span class="listName">Product</span>
+                </a>
+            </li>
+            <li>
+                <a class="link_style" id="Categories" role="button" tabindex="0">
+                    <span aria-hidden="true"><i class="las la-layer-group"></i></span>
+                    <span class="listName">Categories</span>
+                </a>
+            </li>
+            <li>
+                <a class="link_style" id="Orders" role="button" tabindex="0">
+                    <span aria-hidden="true"><i class="las la-shopping-cart"></i></span>
+                    <span class="listName">Orders</span>
+                </a>
+            </li>
+            <li>
+                <a class="link_style" id="Users" role="button" tabindex="0">
+                    <span aria-hidden="true"><i class="las la-user-circle"></i></span>
+                    <span class="listName">Users</span>
+                </a>
+            </li>
+            <li>
+                <a class="link_style" id="Setting" role="button" tabindex="0">
+                    <span aria-hidden="true"><i class="las la-cog"></i></span>
+                    <span class="listName">Setting</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Main Header -->
+    <header role="banner" class="app-header">
+        <div class="header-content">
+            <div class="header-left">
+                <button class="collapse-sidebar-btn" id="collapseSidebarBtn" aria-label="Collapse sidebar" title="Collapse sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <!-- <button class="menu-toggle" id="Bar" aria-label="Toggle sidebar" aria-expanded="false">
+                    <i class="fa-solid fa-bars" id="barIcon"></i>
+                </button> -->
+                <!-- <button class="collapse-sidebar-btn" id="collapseSidebarBtn" aria-label="Collapse sidebar" title="Collapse sidebar">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button> -->
+                <h2 class="page-title">Dashboard</h2>
             </div>
 
             <div class="search-wrapper">
-                <i class="las la-search"></i>
-                <input type="search" placeholder="Search here">
+                <i class="las la-search" aria-hidden="true"></i>
+                <input type="search" placeholder="Search here" aria-label="Search">
             </div>
 
-            <div class="user-wrapper col-2">
-                <div class="col-4">
-                    <img src="Images/YT_Profile.png" class="img-fluid">
+            <div class="user-wrapper">
+                <div class="user-avatar">
+                    <img src="Images/YT_Profile.png" alt="User profile picture" class="img-fluid">
                 </div>
-                <div>
+                <div class="user-info">
                     <h4>Te Chyuy</h4>
                     <small>Admin</small>
                 </div>
             </div>
-        </header>
-    </div>
+        </div>
+    </header>
 
-    <div class="content1 show" id="DashboardContent">
-        <div class="category-content d-flex">
-            <div class="cate1">
-                <div class="cate1-info">
-                    <span class="fs-1 text-white" id="numberProduct">0 <br></span>
-                    <span class="text-white">Products</span>
-                </div>
-                <div><i class="las la-box fs-1 text-white"></i></div>
-            </div>
-            <div class="cate1">
-                <div class="cate1-info">
-                    <span class="fs-1 text-white" id="numberCategory">0 <br></span>
-                    <span class="text-white">Categories</span>
-                </div>
-                <div class="text-white"><i class="las la-file-invoice fs-1"></i></div>
-            </div>
-            <div class="cate1">
-                <div class="cate1-info text-white">
-                    <span class="fs-1 " id="numberUser">0 <br></span>
-                    <span>Users</span>
-                </div>
-                <div class="text-white"><i class="fa-solid fa-users fs-1"></i></div>
-            </div>
-            <div class="cate1">
-                <div class="cate1-info text-white">
-                    <span class="fs-1" id="numberOrder">0 <br></span>
-                    <span class="text-white">Orders</span>
-                </div>
-                <div class="text-white"><i class="las la-shopping-cart fs-1"></i></div>
-            </div>
-            <div id="carouselExampleSlidesOnly" class="adv carousel slide hide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="2000">
-                        <img src="Images/Advs/ThronOfSeal.png" class=" " alt="...">
+    <main role="main" class="main-content">
+
+        <div class="content1 show" id="DashboardContent" role="region" aria-label="Dashboard">
+            <section class="dashboard-section">
+                <div class="category-content">
+                    <div class="cate1">
+                        <div class="cate1-info">
+                            <span class="fs-1 text-white" id="numberProduct">0 <br></span>
+                            <span class="text-white">Products</span>
+                        </div>
+                        <div><i class="las la-box fs-1 text-white"></i></div>
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img src="Images/Advs/Jade dyansty.png" class="" alt="...">
+                    <div class="cate1">
+                        <div class="cate1-info">
+                            <span class="fs-1 text-white" id="numberCategory">0 <br></span>
+                            <span class="text-white">Categories</span>
+                        </div>
+                        <div class="text-white"><i class="las la-file-invoice fs-1"></i></div>
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img src="Images/Advs/RecordMortal.png" class="" alt="...">
+                    <div class="cate1">
+                        <div class="cate1-info text-white">
+                            <span class="fs-1 " id="numberUser">0 <br></span>
+                            <span>Users</span>
+                        </div>
+                        <div class="text-white"><i class="fa-solid fa-users fs-1"></i></div>
+                    </div>
+                    <div class="cate1">
+                        <div class="cate1-info text-white">
+                            <span class="fs-1" id="numberOrder">0 <br></span>
+                            <span class="text-white">Orders</span>
+                        </div>
+                        <div class="text-white"><i class="las la-shopping-cart fs-1"></i></div>
                     </div>
                 </div>
+            </section>
+
+            <div class="info-bottom">
+                <div class="mid-block">
+                    <div class="BalAndExp">
+                        <div class="balanceBlock">
+                            <span><b>Total Balance</b></span>
+                            <h1><sup>$</sup>12,900</h1>
+                            <div class="bal-btn"><i class="las la-arrow-up"></i>10.3%</div>
+                        </div>
+                        <div class="expenseBlock">
+                            <div class="header-card">
+                                <h3>Your cards</h3>
+                                <i class="fa-regular fa-square-plus"></i>
+                            </div>
+            
+                            <div class="logo-card">
+                                <div class="top-card">
+                                    <img src="Images/Logo/Logo-MasterCard.png">
+                                    <span class="text-white">Debit</span>
+            
+                                </div>
+            
+                                <div class="middle-card">
+                                    <span class=" text-white"><sup>$</sup>6,520</span>
+                                </div>
+            
+                                <div class="bottom-card">
+                                    <span class="text-white">. . . . &nbsp;&nbsp; 3917</span>
+                                    <span class="text-white">04/26</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="recent-acti-block">
+                            <span class="fs-7"><b>Recent Actitvity</b></span>
+                            <div class="profile-acti">
+                                <div class="profile-block">
+                                    <div class="left">
+                                        <div class="logo-profile">
+                                            <img src="Images/Logo-Activity/ReadNovelFull.png">
+                                        </div>
+                                        <div class="act-info">
+                                            <span>ReadNovelFull <br></span>
+                                            <span>28 Oct 2020</span>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <span>$12.45</span>
+                                    </div>
+                                </div>
+                                <div class="profile-block">
+                                    <div class="left">
+                                        <div class="logo-profile">
+                                            <img src="Images/Logo-Activity/tencent.png">
+                                        </div>
+                                        <div class="act-info">
+                                            <span>Tencent<br></span>
+                                            <span>28 Oct 2020</span>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <span>$12.45</span>
+                                    </div>
+                                </div>
+                                <div class="profile-block">
+                                    <div class="left">
+                                        <div class="logo-profile">
+                                            <img src="Images/Logo-Activity/yt.png">
+                                        </div>
+                                        <div class="act-info">
+                                            <span>YouTube<br></span>
+                                            <span>28 Oct 2020</span>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <span>$12.45</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table-striped table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">User</th>
+                                <th scope="col">Payment</th>
+                                <th scope="col">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>12-12-24</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>13-01-24</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>13-04-23</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>John</td>
+                                <td>Doe</td>
+                                <td>29-04-22</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+            <!-- Dashboard Tables Section -->
+            <div class="dashboard-tables-section">
+                <!-- Products Table -->
+                <div class="dashboard-table-block">
+                    <h3>Recent Products</h3>
+                    <div class="content-product">
+                        <table class="table table-borderless" id="dashboardProductTable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Category</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Categories Table -->
+                <div class="dashboard-table-block">
+                    <h3>Categories</h3>
+                    <div class="content-product">
+                        <table class="table table-borderless" id="dashboardCateTable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Category Name</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div class="dashboard-table-block">
+                    <h3>Recent Orders</h3>
+                    <div class="content-product">
+                        <table class="table table-borderless" id="dashboardOrderTable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Order Name</th>
+                                    <th scope="col">QTY</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Product</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Users Table -->
+                <div class="dashboard-table-block">
+                    <h3>Users</h3>
+                    <div class="content-product">
+                        <table class="table table-borderless" id="dashboardUserTable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">User Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <div class="info-bottom d-flex">
-            <div class="mid-block">
-                <div class="BalAndExp d-flex">
-                    <div class="balanceBlock">
-                        <span><b>Total Balance</b></span>
-                        <h1><sup>$</sup>12,900</h1>
-                        <div class="bal-btn"><i class="las la-arrow-up"></i>10.3%</div>
-                    </div>
-                    <div class="expenseBlock">
-                        <p class="fs-6">Expense</p>
-                        <img src="Images/Chart.png" class="chart-img">
+        <div class="content1" id="ProductContent">
+            <div class="header-product hide">
+                <div class="header-product-left d-flex">
+                    <span>List Products</span>
+                    <div class="search-wrappers">
+                        <i class="las la-search"></i>
+                        <input type="search" placeholder="Search here">
                     </div>
                 </div>
 
-                <table class="table-striped table">
+                <div class="header-product-right">
+                    <div class="status-all">
+                        <label for="">Filter:</label>
+                        <select class="status" name="status" id="statusSelect">
+                            <option value="all" selected>All</option>
+                            <option value="az">A-Z</option>
+                            <option value="za">Z-A</option>
+                        </select>
+                        
+                        <!-- <span>Status : <span>All</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i></span> -->
+
+                    </div>
+
+                    <div class="add-product" id="addProduct">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Product <i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+                </div>
+            </div>
+            <p class="overview">Products Overview</p>
+
+            <div class="add-content hide" id="addContent">
+                <div class="group-header">
+                    <span class="label-addProduct">Add Product</span>
+                    <i class="fa-solid fa-xmark" id="closeIconProduct"></i>
+                </div>
+                
+                <div class="group-input" id="formProduct">
+                    <input type="text" id="proName" required class="form-control" placeholder="Product Name" aria-label="Username" aria-describedby="addon-wrapping">
+                    <div class="input-group">
+                        <input type="number" id="proPrice" required class="form-control" placeholder="Price" aria-label="Username" aria-describedby="addon-wrapping">
+                        <div class="input-group-text">
+                            <i class="bi bi-cash-stack"></i>
+                        </div>
+                    </div>
+                    <input type="number" id="proQty" required class="form-control" placeholder="Qty" aria-label="Username" aria-describedby="addon-wrapping">
+                    <select class="form-select" id="inputGroupSelect01">
+                        <option selected disabled>Select Categories</option>
+                    </select>
+                    <textarea class="form-control" id="textArea" aria-label="With textarea" placeholder="Description"></textarea>
+                    <div id="liveAlertPlaceholder"></div>
+                    <input type="hidden" id="editProductId">
+                    <button type="submit" class="btn btn-primary" id="liveAlertBtn">Add Product</button>
+                    <button type="submit" class="btn btn-primary" id="upProductBtn">Update Product</button>
+                </div>
+            </div>
+            <hr>
+            <div class="content-product">
+                <table class="table table-borderless" id="productTable">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">User</th>
-                            <th scope="col">Payment</th>
-                            <th scope="col">Date</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Categoty</th>
+                        <th scope="col">Description</th>
+                        <th scope="col" class="actionHead hide">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content1" id="CategoriesContent">
+            <div class="header-product hide">
+                <div class="header-product-left d-flex">
+                    <span>Categories</span>
+                    <div class="search-wrappers">
+                        <i class="las la-search"></i>
+                        <input type="search" placeholder="Search here">
+                    </div>
+                </div>
+
+                <div class="header-product-right">
+                    <div class="status-all">
+                        <label for="">Filter:</label>
+                        <select class="status" name="status" id="statusSelectCate">
+                            <option value="all" selected>All</option>
+                            <option value="az">A-Z</option>
+                            <option value="za">Z-A</option>
+                        </select>
+                        <!-- <span>Status : <span>All</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i></span> -->
+                    </div>
+
+                    <div class="add-product" id="addCate">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Categories <i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+                </div>
+            </div>
+            <p class="overview">Categories Overview</p>
+
+            <div class="add-content hide" id="addContent1">
+                <div class="group-header">
+                    <span class="label-addProduct">Add Category</span>
+                    <i class="fa-solid fa-xmark" id="closeIconCate"></i>
+                </div>
+
+                <div class="group-input">
+                    <input type="text" id="cateName" required class="form-control" placeholder="Category Name" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input type="hidden" id="editCateId">
+                    <div id="toPlaceLabel" class="labelShow"></div>
+                    <button type="submit" class="btn btn-primary hide" id="liveAlertCateBtn">Add Category</button>
+                    <button type="submit" class="btn btn-primary hide" id="upCateBtn">Update Product</button>
+                </div>
+            </div>
+            <hr>
+            <div class="content-product">
+                <table class="table table-borderless" id="cateTable">
+                    <thead>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>12-12-24</td>
+                        <th scope="col">#</th>
+                        <th scope="col">Categories Name</th>
+                        <th scope="col" class="actionHead hide">Action</th>
                         </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content1" id="OrdersContent">
+            <div class="header-product hide">
+                <div class="header-product-left d-flex">
+                    <span>List Orders</span>
+                    <div class="search-wrappers">
+                        <i class="las la-search"></i>
+                        <input type="search" placeholder="Search here">
+                    </div>
+                </div>
+
+                <div class="header-product-right">
+                    <div class="status-all">
+                        <label for="">Filter:</label>
+                        <select class="status" name="status" id="statusSelectOrder">
+                            <option value="all" selected>All</option>
+                            <option value="az">A-Z</option>
+                            <option value="za">Z-A</option>
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                        </select>
+                    </div>
+
+                    <div class="add-product" id="addOrder">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add Order <i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+                </div>
+            </div>
+            <p class="overview">Orders Overview</p>
+
+            <div class="add-content hide" id="addContent2">
+                <div class="group-header">
+                    <span class="label-addProduct">Add Order</span>
+                    <i class="fa-solid fa-xmark" id="closeIconOrder"></i>
+                </div>
+                
+                <div class="group-input" id="formOrder">
+                    <input type="text" id="orName" required class="form-control" placeholder="Order Name" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input type="number" id="orQty" required class="form-control" placeholder="Quantity" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input type="date" id="orDate" required class="form-control" placeholder="mm/dd/yyyy" aria-label="Username" aria-describedby="addon-wrapping">
+                    <select class="form-select" id="inputGroupSelect02">
+                        <option selected disabled>Select Product</option>
+                    </select>
+                    <div id="toPlaceLabel2" class="labelShow"></div>
+                    <input type="hidden" id="editOrderId">
+                    <button type="submit" class="btn btn-primary hide" id="btnSubmitOrder">Add Order</button>
+                    <button type="submit" class="btn btn-primary hide" id="btnUpdateOrder">Update Order</button>
+                </div>
+            </div>  
+            <hr>
+            <div class="content-product">
+                <table class="table table-borderless" id="orTable">
+                    <thead>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>13-01-24</td>
+                        <th scope="col">#</th>
+                        <th scope="col">Order Name</th>
+                        <th scope="col">QTY</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Product</th>
+                        <th scope="col" class="actionHead hide">Actions</th>
                         </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="content1" id="UsersContent">
+            <div class="header-product hide">
+                <div class="header-product-left d-flex">
+                    <span>List Users</span>
+                    <div class="search-wrappers">
+                        <i class="las la-search"></i>
+                        <input type="search" placeholder="Search here">
+                    </div>
+                </div>
+
+                <div class="header-product-right">
+                    <div class="status-all">
+                        <label for="">Filter:</label>
+                        <select class="status" name="status" id="statusSelectUser">
+                            <option value="all" selected>All</option>
+                            <option value="az">A-Z</option>
+                            <option value="za">Z-A</option>
+                        </select>
+                    </div>
+
+                    <div class="add-product" id="addUser">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Add User <i class="fa-solid fa-caret-down"></i></span>
+                    </div>
+                </div>
+            </div>
+            <p class="overview">Users Overview</p>
+
+            <div class="add-content hide" id="addContent3">
+                <div class="group-header">
+                    <span class="label-addProduct">Add User</span>
+                    <i class="fa-solid fa-xmark" id="closeIconUser"></i>
+                </div>
+                
+                <div class="group-input" id="formUser">
+                    <input type="text" id="userName" required class="form-control" placeholder="User Name" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input type="email" id="userEmail" required class="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input type="text" id="userPhone" required class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="addon-wrapping">
+                    <div id="toPlaceLabel3" class="labelShow"></div>
+                    <input type="hidden" id="editUserId">
+                    <button type="submit" class="btn btn-primary" id="btnSubmitUser">Add User</button>
+                    <button type="submit" class="btn btn-primary" id="btnUpdateUser">Update User</button>
+                </div>
+            </div>
+            <hr>
+            <div class="content-product">
+                <table class="table table-borderless" id="userTable">
+                    <thead>
                         <tr>
-                            <th scope="row">3</th>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>13-04-23</td>
+                        <th scope="col">#</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col" class="actionHead hide">Actions</th>
                         </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>29-04-22</td>
-                        </tr>
-                    </tbody>
-                    </table>
-            </div>
-    
-            <div class="right-block">
-                <div class="header-card">
-                    <h3>Your cards</h3>
-                    <i class="fa-regular fa-square-plus"></i>
-                </div>
-
-                <div class="logo-card">
-                    <div class="top-card">
-                        <img src="Images/Logo/Logo-MasterCard.png">
-                        <span class="text-white">Debit</span>
-
-                    </div>
-
-                    <div class="middle-card">
-                        <span class=" text-white"><sup>$</sup>6,520</span>
-                    </div>
-
-                    <div class="bottom-card">
-                        <span class="text-white">. . . . &nbsp;&nbsp; 3917</span>
-                        <span class="text-white">04/26</span>
-                    </div>
-                </div>
-
-                <div class="recent-acti-block">
-                    <span class="fs-7"><b>Recent Actitvity</b></span>
-                    <div class="profile-acti">
-                        <div class="profile-block">
-                            <div class="left">
-                                <div class="logo-profile">
-                                    <img src="Images/Logo-Activity/ReadNovelFull.png">
-                                </div>
-                                <div class="act-info">
-                                    <span>ReadNovelFull <br></span>
-                                    <span>28 Oct 2020</span>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <span>$12.45</span>
-                            </div>
-                        </div>
-                        <div class="profile-block">
-                            <div class="left">
-                                <div class="logo-profile">
-                                    <img src="Images/Logo-Activity/tencent.png">
-                                </div>
-                                <div class="act-info">
-                                    <span>Tencent<br></span>
-                                    <span>28 Oct 2020</span>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <span>$12.45</span>
-                            </div>
-                        </div>
-                        <div class="profile-block">
-                            <div class="left">
-                                <div class="logo-profile">
-                                    <img src="Images/Logo-Activity/yt.png">
-                                </div>
-                                <div class="act-info">
-                                    <span>YouTube<br></span>
-                                    <span>28 Oct 2020</span>
-                                </div>
-                            </div>
-                            <div class="right">
-                                <span>$12.45</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
 
-    </div>
-
-    <div class="content1 show" id="ProductContent">
-        <div class="header-product hide">
-            <div class="header-product-left d-flex">
-                <span>List Products</span>
-                <div class="search-wrappers">
-                    <i class="las la-search"></i>
-                    <input type="search" placeholder="Search here">
-                </div>
-            </div>
-
-            <div class="header-product-right">
-                <div class="status-all">
-                    <span>Status : <span>All</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-
-                <div class="add-product" id="addProduct">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Add Product <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-            </div>
+        <div class="content1" id="SettingContent">
+            <h1>Setting......</h1>
         </div>
-        <p class="overview">Products Overview</p>
 
-        <div class="add-content hide" id="addContent">
-            <div class="group-header">
-                <span class="label-addProduct">Add Product</span>
-                <i class="fa-solid fa-xmark" id="closeIconProduct"></i>
-            </div>
-            
-            <div class="group-input" id="formProduct">
-                <input type="text" id="proName" required class="form-control" placeholder="Product Name" aria-label="Username" aria-describedby="addon-wrapping">
-                <div class="input-group">
-                    <input type="number" id="proPrice" required class="form-control" placeholder="Price" aria-label="Username" aria-describedby="addon-wrapping">
-                    <div class="input-group-text">
-                        <i class="bi bi-cash-stack"></i>
-                    </div>
-                </div>
-                <input type="number" id="proQty" required class="form-control" placeholder="Qty" aria-label="Username" aria-describedby="addon-wrapping">
-                <select class="form-select" id="inputGroupSelect01">
-                    <option selected disabled>Select Categories</option>
-                </select>
-                <textarea class="form-control" id="textArea" aria-label="With textarea" placeholder="Description"></textarea>
-                <div id="liveAlertPlaceholder"></div>
-                <input type="hidden" id="editProductId">
-                <button type="submit" class="btn btn-primary hide" id="liveAlertBtn">Add Product</button>
-                <button type="submit" class="btn-primary hide" id="upProductBtn">Update Product</button>
-            </div>
-        </div>
-        <hr>
-        <div class="content-product">
-            <table class="table table-borderless" id="productTable">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Categoty</th>
-                    <th scope="col">Description</th>
-                    <th scope="col" class="actionHead hide">Action</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="content1 show" id="CategoriesContent">
-         <div class="header-product hide">
-            <div class="header-product-left d-flex">
-                <span>Categories</span>
-                <div class="search-wrappers">
-                    <i class="las la-search"></i>
-                    <input type="search" placeholder="Search here">
-                </div>
-            </div>
-
-            <div class="header-product-right">
-                <div class="status-all">
-                    <span>Status : <span>All</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-
-                <div class="add-product" id="addCate">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Add Categories <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-            </div>
-        </div>
-        <p class="overview">Categories Overview</p>
-
-        <div class="add-content hide" id="addContent1">
-            <div class="group-header">
-                <span class="label-addProduct">Add Category</span>
-                <i class="fa-solid fa-xmark" id="closeIconCate"></i>
-            </div>
-
-            <div class="group-input">
-                <input type="text" id="cateName" required class="form-control" placeholder="Category Name" aria-label="Username" aria-describedby="addon-wrapping">
-                <input type="hidden" id="editCateId">
-                <div id="toPlaceLabel" class="labelShow"></div>
-                <button type="submit" class="btn btn-primary hide" id="liveAlertCateBtn">Add Category</button>
-                <button type="submit" class="btn-primary hide" id="upCateBtn">Update Product</button>
-            </div>
-        </div>
-        <hr>
-        <div class="content-product">
-            <table class="table table-borderless" id="cateTable">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Categories Name</th>
-                    <th scope="col" class="actionHead hide">Action</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="content1 show" id="OrdersContent">
-        <div class="header-product hide">
-            <div class="header-product-left d-flex">
-                <span>List Orders</span>
-                <div class="search-wrappers">
-                    <i class="las la-search"></i>
-                    <input type="search" placeholder="Search here">
-                </div>
-            </div>
-
-            <div class="header-product-right">
-                <div class="status-all">
-                    <span>Status : <span>All</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-
-                <div class="add-product" id="addOrder">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Add Order <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-            </div>
-        </div>
-        <p class="overview">Orders Overview</p>
-
-        <div class="add-content hide" id="addContent2">
-            <div class="group-header">
-                <span class="label-addProduct">Add Order</span>
-                <i class="fa-solid fa-xmark" id="closeIconOrder"></i>
-            </div>
-            
-            <div class="group-input" id="formOrder">
-                <input type="text" id="orName" required class="form-control" placeholder="Order Name" aria-label="Username" aria-describedby="addon-wrapping">
-                <input type="number" id="orQty" required class="form-control" placeholder="Quantity" aria-label="Username" aria-describedby="addon-wrapping">
-                <input type="date" id="orDate" required class="form-control" placeholder="mm/dd/yyyy" aria-label="Username" aria-describedby="addon-wrapping">
-                <select class="form-select" id="inputGroupSelect02">
-                    <option selected disabled>Select Product</option>
-                </select>
-                <div id="toPlaceLabel2" class="labelShow"></div>
-                <input type="hidden" id="editOrderId">
-                <button type="submit" class="btn btn-primary hide" id="btnSubmitOrder">Add Order</button>
-                <button type="submit" class="btn-primary hide" id="btnUpdateOrder">Update Order</button>
-            </div>
-        </div>  
-        <hr>
-        <div class="content-product">
-            <table class="table table-borderless" id="orTable">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Order Name</th>
-                    <th scope="col">QTY</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Product</th>
-                    <th scope="col" class="actionHead hide">Actions</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="content1 show" id="UsersContent">
-        <div class="header-product hide">
-            <div class="header-product-left d-flex">
-                <span>List Users</span>
-                <div class="search-wrappers">
-                    <i class="las la-search"></i>
-                    <input type="search" placeholder="Search here">
-                </div>
-            </div>
-
-            <div class="header-product-right">
-                <div class="status-all">
-                    <span>Status : <span>All</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-
-                <div class="add-product" id="addUser">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Add User <i class="fa-solid fa-caret-down"></i></span>
-                </div>
-            </div>
-        </div>
-        <p class="overview">Users Overview</p>
-
-        <div class="add-content hide" id="addContent3">
-            <div class="group-header">
-                <span class="label-addProduct">Add User</span>
-                <i class="fa-solid fa-xmark" id="closeIconUser"></i>
-            </div>
-            
-            <div class="group-input" id="formUser">
-                <input type="text" id="userName" required class="form-control" placeholder="User Name" aria-label="Username" aria-describedby="addon-wrapping">
-                <input type="email" id="userEmail" required class="form-control" placeholder="Email" aria-label="Username" aria-describedby="addon-wrapping">
-                <input type="text" id="userPhone" required class="form-control" placeholder="Phone Number" aria-label="Username" aria-describedby="addon-wrapping">
-                <div id="toPlaceLabel3" class="labelShow"></div>
-                <input type="hidden" id="editUserId">
-                <button type="submit" class="btn btn-primary hide" id="btnSubmitUser">Add User</button>
-                <button type="submit" class="btn-primary hide" id="btnUpdateUser">Update User</button>
-            </div>
-        </div>
-        <hr>
-        <div class="content-product">
-            <table class="table table-borderless" id="userTable">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">User Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Phone</th>
-                    <th scope="col" class="actionHead hide">Actions</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="content1" id="SettingContent">
-        <h1>Setting......</h1>
-    </div>
-
+    </main>
 
 </body>
 <!-- Link Javascript Function -->

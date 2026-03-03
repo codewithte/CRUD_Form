@@ -9,9 +9,9 @@ function addHideShow(elementID, show) {
 function showHideBtn(btnID, show) {
     const btn = document.getElementById(btnID);
     if (show) {
-        btn.classList.add("btn");
+        btn.classList.remove("hide");
     } else {
-        btn.classList.remove("btn");
+        btn.classList.add("hide");
     }
 }
 function displayNumber(elementID, item) {

@@ -2,6 +2,10 @@
 renderTablecate();
 
 function renderTablecate(){
+  const statusSelect = document.getElementById('statusSelectCate');
+  if (statusSelect) {
+    sortCate(statusSelect.value);
+  }
   const tbody = document.querySelector("#cateTable tbody");
   tbody.innerHTML = "";
 
@@ -17,6 +21,8 @@ function renderTablecate(){
     `;
     tbody.appendChild(row);
   });
+  // Also render dashboard category table
+  renderDashboardCateTable();
 }
 
 function addCategory(cateName){
@@ -37,6 +43,8 @@ function reloadCateInProduct(){
  })
 }
 
+// Initialize dashboard tables after all scripts are loaded
+renderAllDashboardTables();
 
 
 

@@ -1,51 +1,74 @@
 const barIcon = document.getElementById("barIcon");
 const addProduct = document.getElementById("addProduct");
-let checkBar = 1;
-function showFullSideBar(){
-    let sideBar = document.getElementById("sideBar");
-    let companyName = document.getElementById("companyName");
-    const barList = document.querySelectorAll("li");
-    const listName = document.querySelectorAll("span.listName");
-    const header = document.querySelector("header");
-    const content1 = document.querySelectorAll(".content1");
-    const adv = document.querySelector(".adv");
-    if(checkBar == 1){
-        sideBar.style.width = "100px";
-        companyName.style.display = "none";
-        barList.forEach(li =>{
-            li.style.padding = "0";
-        })
-        listName.forEach(span =>{
-            span.style.display = "none";
-        })
-        header.style.left = "100px";
-        // content1.style.margin = "70px 0 0 100px";
-        content1.forEach(content => {
-            content.style.margin = "70px 0 0 100px";
-        });
-        adv.classList.remove('hide');
-        checkBar = 0;
-    } else{
-        sideBar.style.width = "345px";
-        companyName.style.display = "inline-block";
-        barList.forEach(li =>{
-            li.style.padding = "0 0 0 1rem";
-        })
-        listName.forEach(span =>{
-            span.style.display = "inline-block";
-        })
-        header.style.left = "345px";
-        content1.forEach(content => {
-            content.style.margin = "70px 0 0 345px";
-            
-        });
-        adv.classList.add('hide');
-        checkBar = 1;
+const sideBar = document.getElementById("sideBar");
+const menuToggle = document.getElementById("Bar");
+const collapseSidebarBtn = document.getElementById("collapseSidebarBtn");
+const appHeader = document.querySelector(".app-header");
+const mainContent = document.querySelector("main.main-content");
+
+// Mobile menu toggle functionality
+function toggleMobileMenu() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+        sideBar.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', sideBar.classList.contains('open'));
     }
 }
 
+// Close mobile menu when clicking on links
+function closeMobileMenuOnNavigation() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && sideBar.classList.contains('open')) {
+        sideBar.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+}
+
+// Handle window resize
+function handleWindowResize() {
+    const isMobile = window.innerWidth <= 768;
+    if (!isMobile && sideBar.classList.contains('open')) {
+        sideBar.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+}
+
+// Collapse/Expand sidebar functionality (desktop only)
+function toggleSidebarCollapse() {
+    const isDesktop = window.innerWidth > 768;
+    if (isDesktop) {
+        sideBar.classList.toggle('collapsed');
+        appHeader.classList.toggle('sidebar-collapsed');
+        mainContent.classList.toggle('sidebar-collapsed');
+        // document.body.classList.toggle('sidebar-collapsed');
+    }
+}
+
+// Event listeners for menu toggle
+// menuToggle.addEventListener('click', toggleMobileMenu);
+collapseSidebarBtn.addEventListener('click', toggleSidebarCollapse);
+window.addEventListener('resize', handleWindowResize);
+
+// Show/hide collapse button based on screen size
+function updateCollapseButtonVisibility() {
+    if (window.innerWidth > 768) {
+        collapseSidebarBtn.style.display = 'flex';
+    } else {
+        collapseSidebarBtn.style.display = 'none';
+    }
+}
+
+updateCollapseButtonVisibility();
+window.addEventListener('resize', updateCollapseButtonVisibility);
+
 const link_style = document.querySelectorAll(".link_style");
 const sections = document.querySelectorAll('.content1');
+
+link_style.forEach(linkStyle => {
+    linkStyle.addEventListener("click", () => {
+        closeMobileMenuOnNavigation();
+    });
+});
 
 link_style.forEach(linkStyle =>{
     linkStyle.addEventListener("click",()=>{
@@ -58,35 +81,27 @@ link_style.forEach(linkStyle =>{
         // show the matching section
         const targetId = linkStyle.id + 'Content'; // e.g. "Dashboard" → "DashboardContent"
         document.getElementById(targetId).classList.add('show');
+        
+        // Show header and overview for all non-dashboard sections
         const labelTitle = document.querySelectorAll(".header-product");
         const labelOverview = document.querySelectorAll(".overview");
-
         const actionHead = document.querySelectorAll(".actionHead");
         const actionCell = document.querySelectorAll(".actionCell");
+        
         if(targetId === "DashboardContent"){
-            sections.forEach(section => section.classList.add('show'));
-            sections.forEach(i=> i.style.padding ="0rem 1.5rem");
-            document.getElementById(targetId).style.padding = "2rem 1.5rem";
-
-            labelTitle.forEach(i=> i.classList.remove('d-flex'));
-            labelOverview.forEach(i=> i.classList.remove('hide'));
-
-            document.getElementById("SettingContent").classList.remove('show');
-
-            const addContent = document.querySelectorAll(".add-content");
-            addContent.forEach(i=>i.classList.add('hide'));
-            actionHead.forEach(i=>i.classList.add('hide'));
-            actionCell.forEach(i=>i.classList.add('hide'));
-
-        } else{
-            
-            labelOverview.forEach(i=> i.classList.add('hide'));
-            labelTitle.forEach(i=> i.classList.add('d-flex'));
-    
-            sections.forEach(i=> i.style.padding ="2rem 1.5rem");
-
-            actionHead.forEach(i=>i.classList.remove('hide'));
-            actionCell.forEach(i=>i.classList.remove('hide'));
+            // Dashboard: hide header, show overview, hide action buttons
+            labelTitle.forEach(i => i.classList.add('hide'));
+            labelOverview.forEach(i => i.classList.add('hide'));
+            actionHead.forEach(i => i.classList.add('hide'));
+            actionCell.forEach(i => i.classList.add('hide'));
+            // Render dashboard tables
+            renderAllDashboardTables();
+        } else {
+            // Other sections: show header, hide overview, show action buttons
+            labelTitle.forEach(i => i.classList.remove('hide'));
+            labelOverview.forEach(i => i.classList.add('hide'));
+            actionHead.forEach(i => i.classList.remove('hide'));
+            actionCell.forEach(i => i.classList.remove('hide'));
         }
 
     })
@@ -120,15 +135,12 @@ if (alertTrigger) {
   })
 }
 
-// Event Click
-barIcon.addEventListener("click",showFullSideBar);
-
 //open Add Product Content
 const btnUpdate = document.getElementById("upProductBtn");
 addProduct.addEventListener("click", () => {
     addHideShow("addContent", true);
-    alertTrigger.classList.add('btn');
-    btnUpdate.classList.remove('btn');
+    showHideBtn("liveAlertBtn", true);
+    showHideBtn("upProductBtn", false);
     resetProductForm();
 
 });
@@ -274,6 +286,11 @@ const addOrderSubmitBtn = document.getElementById("btnSubmitOrder");
 const updateOrderBtn = document.getElementById("btnUpdateOrder");
 // Function
 function renderTableOrder(){
+    const statusSelect = document.getElementById('statusSelectOrder');
+    if (statusSelect) {
+      sortOrder(statusSelect.value);
+    }
+
     const tbody = document.querySelector("#orTable tbody");
     tbody.innerHTML = "";
 
@@ -292,6 +309,8 @@ function renderTableOrder(){
         `;
         tbody.appendChild(row);
     })
+    // Also render dashboard order table
+    renderDashboardOrderTable();
 }
 function reloadProductInOrder(){
     const select = document.getElementById("inputGroupSelect02");
@@ -417,6 +436,10 @@ const updateUserBtn = document.getElementById("btnUpdateUser");
 
 // Function
 function renderTableUser(){
+    const statusSelect = document.getElementById('statusSelectUser');
+    if(statusSelect) {
+        sortUser(statusSelect.value);
+    }
     const tbody = document.querySelector("#userTable tbody");
     tbody.innerHTML = "";
 
@@ -434,6 +457,8 @@ function renderTableUser(){
         `;
         tbody.appendChild(row);
     })
+    // Also render dashboard user table
+    renderDashboardUserTable();
 }
 function countUser(){
     const numberuser = document.getElementById("numberUser");
@@ -495,6 +520,9 @@ addUserSubmitBtn.addEventListener("click", () =>{
     if(!userName || !userEmail || !userPhone){
         alert("Please Fill the form!");
         return;
+    } else if (!userEmail.includes("@")) {
+        alert("Please enter a valid email address with '@'.");
+        return;
     }
     label.textContent = "User Added!";
     toPlaceLabel.appendChild(label);
@@ -527,10 +555,6 @@ updateUserBtn.addEventListener("click", ()=>{
     renderTableUser();
     addHideShow("addContent3", false);
 })
-
-
-
-
 
 
 
