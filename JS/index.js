@@ -556,6 +556,47 @@ updateUserBtn.addEventListener("click", ()=>{
     addHideShow("addContent3", false);
 })
 
+const useerInfo = document.getElementById("user-wrapper");
+useerInfo.addEventListener("click", () =>{
+    const profile = document.getElementById("profileUser");
+    if(profile.classList.contains("hide")){
+        profile.classList.remove("hide");
+    } else {
+        profile.classList.add("hide");
+    }
+});
+
+// Notification Bell Functionality
+const notificationBell = document.getElementById("notificationBell");
+const notificationDropdown = document.getElementById("notificationDropdown");
+const closeNotification = document.getElementById("closeNotification");
+
+// Toggle notification dropdown
+notificationBell.addEventListener("click", () => {
+    notificationDropdown.classList.toggle("hide");
+});
+
+// Close notification when X button is clicked
+closeNotification.addEventListener("click", () => {
+    notificationDropdown.classList.add("hide");
+});
+
+// Close notification when clicking outside
+document.addEventListener("click", (event) => {
+    const isClickInside = notificationBell.contains(event.target) || 
+                         notificationDropdown.contains(event.target);
+    if (!isClickInside && !notificationDropdown.classList.contains("hide")) {
+        notificationDropdown.classList.add("hide");
+    }
+});
+
+// Mark notifications as read when clicked
+document.querySelectorAll(".notification-item").forEach(item => {
+    item.addEventListener("click", () => {
+        item.classList.remove("unread");
+    });
+});
+
 
 
 

@@ -253,7 +253,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Initialize search functionality for all search inputs
+  initializeSearch();
 });
+
+/* ---- SEARCH FUNCTIONALITY ---- */
+
+// Generic search function for filtering table rows
+function searchTable(tableId, searchText) {
+  const table = document.getElementById(tableId);
+  if (!table) return;
+  
+  const tbody = table.querySelector('tbody');
+  if (!tbody) return;
+  
+  const rows = tbody.querySelectorAll('tr');
+  const searchLower = searchText.toLowerCase();
+  
+  rows.forEach(row => {
+    const cells = row.querySelectorAll('td');
+    let isMatch = false;
+    
+    cells.forEach(cell => {
+      if (cell.textContent.toLowerCase().includes(searchLower)) {
+        isMatch = true;
+      }
+    });
+    
+    // Show or hide the row based on match
+    row.style.display = isMatch ? '' : 'none';
+  });
+}
+
+// Initialize search functionality for all sections
+function initializeSearch() {
+  // Product Search
+  const productSearchInputs = document.querySelectorAll('#ProductContent .search-wrappers input');
+  if (productSearchInputs.length > 0) {
+    productSearchInputs[0].addEventListener('input', (e) => {
+      searchTable('productTable', e.target.value);
+    });
+  }
+  
+  // Category Search
+  const categorySearchInputs = document.querySelectorAll('#CategoriesContent .search-wrappers input');
+  if (categorySearchInputs.length > 0) {
+    categorySearchInputs[0].addEventListener('input', (e) => {
+      searchTable('cateTable', e.target.value);
+    });
+  }
+  
+  // Order Search
+  const orderSearchInputs = document.querySelectorAll('#OrdersContent .search-wrappers input');
+  if (orderSearchInputs.length > 0) {
+    orderSearchInputs[0].addEventListener('input', (e) => {
+      searchTable('orTable', e.target.value);
+    });
+  }
+  
+  // User Search
+  const userSearchInputs = document.querySelectorAll('#UsersContent .search-wrappers input');
+  if (userSearchInputs.length > 0) {
+    userSearchInputs[0].addEventListener('input', (e) => {
+      searchTable('userTable', e.target.value);
+    });
+  }
+}
 
 
 
