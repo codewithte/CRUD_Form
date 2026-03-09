@@ -95,8 +95,9 @@ const confirmed = confirm("Are you sure you want to delete this product?");
   if(!confirmed) return;
   deleteProduct(id);
   renderTables();
-  countProduct();
+  // countProduct();
   reloadProductInOrder();
+  displayNumber("numberProduct", products);
 }
 
 function deleteAndRenderCate(id){

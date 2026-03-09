@@ -598,6 +598,61 @@ document.querySelectorAll(".notification-item").forEach(item => {
 });
 
 
+function initInfoUser(){
+    const inputName = document.getElementById("inputFullNameUser");
+    inputName.value = "Te Chyuy";
+    const inputEmail = document.getElementById("inputEmailUser");
+    inputEmail.value = "techyuy@gmail.com";
+    const inputUsername = document.getElementById("inputUsernameUser");
+    inputUsername.value = "techyuy";
+    const inputPhone = document.getElementById("inputPhoneUser");
+    inputPhone.value = "70-55-29-20";
+    const bioTextarea = document.getElementById("bioTextarea");
+    bioTextarea.value = "Te is committed to continuous learning and innovation, always seeking new ways to enhance application performance and user satisfaction. With a focus on clean code and efficient database management, Te Chyuy is dedicated to creating impactful web solutions that drive business success.";
+    
+    // Update bio character count
+    updateBioCount();
+}
+
+initInfoUser();
+
+// Settings Tab Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const settingsTabs = document.querySelectorAll('.settings-tab-item');
+    const contentSections = document.querySelectorAll('.settings-content-section');
+
+    settingsTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const tabName = tab.getAttribute('data-tab');
+            
+            // Remove active class from all tabs and sections
+            settingsTabs.forEach(t => t.classList.remove('active'));
+            contentSections.forEach(section => section.classList.remove('active'));
+            
+            // Add active class to clicked tab and corresponding section
+            tab.classList.add('active');
+            const activeSection = document.getElementById(`${tabName}-section`);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        });
+    });
+
+    // Bio textarea character counter
+    const bioTextarea = document.getElementById('bioTextarea');
+    if (bioTextarea) {
+        bioTextarea.addEventListener('input', updateBioCount);
+    }
+});
+
+function updateBioCount() {
+    const bioTextarea = document.getElementById('bioTextarea');
+    const bioCount = document.getElementById('bioCount');
+    if (bioTextarea && bioCount) {
+        bioCount.textContent = bioTextarea.value.length;
+    }
+}
+
 
 
 
